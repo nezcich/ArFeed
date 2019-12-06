@@ -1,0 +1,59 @@
+.annotation-editor{
+	position: absolute;
+	top: 0px;
+    left: 41%;
+    margin-left: -5%;
+	width: 150px;
+	z-index: 1;
+	padding: 10px;
+	background: #e9eef4;
+    box-shadow: 0px 11px 10px hsla(0, 0%, 0%, 0.2);
+}
+.ann_rect{
+  border: solid 2px #ff3192;
+  background: rgba(255, 49, 146, .45);
+  box-sizing: border-box;
+  transition: box-shadow 0.21s ease-in-out;
+  position: absolute;	
+  .material-icons{
+	color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ff3192;
+    cursor: pointer;
+    z-index: 1;  	
+  }
+}
+.submitted .ann_rect .material-icons{
+  display: none;
+}
+.ann_point{
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(0, 0, 0, 0.2), 0 5px 4px rgba(0, 0, 0, 0.4);
+  border: solid 3px #ff3192;
+  height: 16px;
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  width: 16px;
+}
+.ann_rect.oval{
+	border-radius: 100%;
+}
+.ann_content{
+  background: #ff3192;
+  background: linear-gradient(45deg,#ff3192,#d32978);
+  border-radius: 2px;
+  padding: 8px 16px;
+  margin-top: 8px;
+  margin-left: 8px;
+  color: #FFF;	
+}
+.ann_btn .cta.thin{
+	text-align: left;
+}
+.ann_btn .cta.thin:hover,.ann_btn .cta.thin.selected{
+	color: initial;
+	text-decoration: underline;
+}

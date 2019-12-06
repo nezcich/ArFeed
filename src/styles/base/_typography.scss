@@ -1,0 +1,70 @@
+html {
+	font-size: 100%;
+	font-style: normal;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+}
+/*
+@font-face {
+  font-family: 'Apercu';
+  font-style: bold;
+  font-weight: bold;
+  src: local('Apercu'), url('https://rawgit.com/ianlord/nk/master/static/fonts/Apercu-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Apercu';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Apercu'), url('https://rawgit.com/ianlord/nk/master/static/fonts/Apercu.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Apercu';
+  font-style: 100;
+  font-weight: 100;
+  src: local('Apercu'), url('https://rawgit.com/ianlord/nk/master/static/fonts/Apercu-Light.ttf') format('truetype');
+}
+*/
+html, body, input, textarea, select, button ,.appbar button,.appbar span,.appbar div{
+	font-family: 'IBM Plex Sans', Helvetica, sans-serif!important;
+	//'Apercu'
+}
+h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+}
+
+h1, h2 {font-size: 2.827em;}
+
+h3 {font-size: 1.999em;}
+
+h4 {font-size: 1.414em;}
+
+small, .font_small {font-size: 0.707em;}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+.clearfix{
+    direction: ltr;
+    text-align: left;
+    font-size: 14px;
+    font-weight: normal;
+}
+.mpad{
+	margin: 10px;
+}
+.wrapper{
+    flex-direction: row;
+}
+.subheader.light{
+	font-size: 120%;
+	margin: 10px 0;
+	font-weight: 100;
+	color: #7185c5;
+}
+.upper{
+    text-transform: uppercase;
+}

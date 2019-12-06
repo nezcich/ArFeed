@@ -1,0 +1,193 @@
+.box.lbluebg{
+	background: #e9eef4;
+	width: 330px;
+}
+.menubar{
+	width: 90px;
+}
+.hit-title{
+    font-size: 26px;
+    border: 0;
+    font-weight: bold;	
+}
+.hit-descr,.lbluebg input[type="text"]{
+    border-color: rgb(28, 37, 65);
+    border-width: 2px;	
+    margin: 5px 0px;
+}
+.lbluebg input[type="text"]:disabled{	
+	border-color: #a8a8a8;
+}
+.taginput input[type="text"]{
+	margin-right: 10px;
+}
+.hit-label{
+	color: rgb(28, 37, 65);
+	font-size: 14px;
+	font-weight: bold;
+    margin: 15px 0 3px;	
+}
+.hit-light{
+	font-size: 12px;
+	color: #a7a7a7;
+}
+.hitbox .box{
+	margin: 0px;
+}
+.hit-reward,.hit-fee,.hit-confirmations{
+	width: 60px;
+}
+.lbluebg .secondary-btn.cta{
+    color: #1c2551;
+    background: #cad7ff;
+    border-radius: 0;
+}
+.lbluebg .secondary-btn.cta:hover{
+    background: #95a8e4;
+    font-weight: bold;
+}
+.hit-section{
+  border-radius: 4px;
+}
+.hit-section .explore-title{
+	font-size: 20px;
+}
+.hit-section .explore-descr{
+	color: #545454;
+    padding: 5px 0px;
+}
+.hit-section .explore-descr.explore-arql{
+    background: #bfebfd;
+    border-radius: 10px;
+    padding: 14px;
+}
+.section-div .explore-descr.explore-arql{
+    margin: 20px;
+    border-radius: 0;
+    background: #dfdfdf;
+    padding: 10px;
+    color: #333;
+    border: 3px solid transparent;
+    transition: .1s all;
+}
+.section-div .explore-descr.explore-arql:hover {
+    border: 3px solid  #839dee;
+    cursor: pointer;
+}
+.hit-section.selected {
+    border-color: #608efe;
+    box-shadow: 0 0 16px 0 rgba(96, 142, 254, 0.35);
+}
+.RoundBtn.disabled{
+	box-shadow: none;
+    background: rgba(0,0,0,.2);
+    pointer-events: none;
+    opacity: .7;	
+}
+.export-btn{
+    display: flex;
+    align-items: center;
+    transition: .15s all linear;
+    cursor: pointer;
+    box-shadow: -4px 4px 10px rgba(12, 50, 74, .36);
+    border: 0;
+    border-radius: 4px;
+    background: #3bff5b;
+    padding: 5px 10px;
+    overflow: hidden;
+    color: #FFF;
+    font-weight: bold;  
+}
+.export-btn:active{
+    transform: translateY(-3px);
+    box-shadow: -2px 1px 10px rgba(12, 50, 74, .36);    
+}
+.fullHW{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+}
+.cover-dropzone{
+    position: relative;
+}
+
+
+.flex.box.boxkill.expand.nocover {
+    padding-top: 20px;
+}
+
+.nocover .explore-title.titlebig {
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.nocover .explore-title.titlebig a {
+    color: #333;
+}
+.question-box{
+   flex: 1 1 auto;
+}
+.claimedDiv{
+    margin-left: 20px;
+    .hit-label{
+        margin: 0px 4px;
+    }
+    .subheader.bold{
+        font-size: 20px;
+    }
+    .crypto-coin{
+        margin: 0px;
+    }
+
+    background: #c0ffa6;
+    padding: 5px 8px;
+    border-radius: 4px;    
+}
+.claimedDiv.redbg{
+    background: #ffa6df;
+}
+.hitbox{
+    height: 100%;
+}
+.hit{
+    width: 100%;
+}
+
+.cta.thin.prevbtn{
+    border-radius: 4px;
+    padding: 10px 20px;
+    box-shadow: #e81212 3px 4px 15px 0px;    
+    background: #e81212;
+    color: #FFF;
+}
+.cta.thin.nextbtn{
+    border-radius: 4px;
+    padding: 10px 20px;
+    box-shadow: #15a3cf 3px 4px 15px 0px;    
+    background: #15a3cf;
+    color: #FFF;
+}
+.cta.thin.nextbtn:hover{
+    border-color: #1183a7;
+    background: #1183a7;
+}
+.cta.thin.blockchainbtn{
+    border-radius: 4px;
+    padding: 10px 50px;
+    box-shadow: #42ff7c 3px 4px 15px 0px;    
+    background: #42ff7c;
+    border-color: #42ff7c;
+    color: #FFF;
+}
+.cta.thin.blockchainbtn:hover{
+    border-color: #35d867;
+    background: #35d867;
+}
+.cta.thin.prevbtn:hover{
+    border-color: #d21212;
+    background: #d21212;
+}
+.prevbtn:active,.nextbtn:active{
+  transform: translateY(-4px);
+}

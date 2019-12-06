@@ -1,0 +1,418 @@
+.home {
+    .hero-unit {
+        display: flex;
+        flex: 0 1 auto;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .react-logo {
+        display: block;
+        flex: none;
+        overflow: hidden;
+        clear: both;
+        width: 100%;
+        height: 96px;
+        margin-bottom: 24px;
+        background: url(react_logo.svg);
+        background-repeat: no-repeat;
+        background-size: 96px 96px;
+        background-position: center;
+    }
+    header {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(480px - 60px);
+        background: $primary;
+        .hero-unit {
+            margin-bottom: 24px;
+        }
+        .react-logo {}
+        h1 {
+            font-weight: 700;
+            color: #000;
+        }
+        h4 {
+            color: rgba(#000, .5);
+            font-weight: 400;
+        }
+        @media screen and (max-width: 960px) {
+            padding: 24px;
+            text-align: center;
+            h1 {
+                font-size: 6vmax;
+            }
+        }
+    }
+    main {
+        display: flex;
+        flex-flow: row wrap;
+        min-width: 960px;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 96px 0;
+        .section-header {
+            flex: 0 1 auto;
+            width: 100%;
+            padding-bottom: 72px;
+            text-align: center;
+            color: #000;
+            h3 {
+                font-weight: 700;
+            }
+            &.extras {
+                margin-top: 48px;
+                h4 {
+                    font-weight: 700;
+                    color: #000;
+                }
+                ul {
+                    display: flex;
+                    flex: 1;
+                    flex-flow: row nowrap;
+                    width: 100%;
+                    max-width: 720px;
+                    margin: 36px auto 0 auto;
+                    li {
+                        display: flex;
+                        flex: 1;
+                        align-content: center;
+                        justify-content: center;
+                    }
+                    @media screen and (max-width: 960px) {
+                        flex-flow: column;
+                        li {
+                            flex: 0 1 auto;
+                            width: 100%;
+                            margin-bottom: 18px;
+                        }
+                    }
+                }
+            }
+            hr {
+                border: none;
+                height: 1px;
+                color: #ddd;
+                background-color: #ddd;
+                margin: 24px auto 0px;
+                max-width: 96px;
+            }
+        }
+        .boilerplate-item {
+            display: flex;
+            flex: 0 1 auto;
+            flex-flow: row nowrap;
+            width: calc(50% - 48px);
+            margin-right: 48px;
+            margin-bottom: 48px;
+            .boilerplate-logo {
+                display: flex;
+                width: 80px;
+                height: 80px;
+                margin-right: 24px;
+                background: url(react.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                &.mobx {
+                    background: url(mobx.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                &.reactrouter {
+                    background: url(reactrouter.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                &.webpack {
+                    background: url(webpack.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+            .boilerplate-item-content {
+                flex: 1;
+            }
+            h4 {
+                font-weight: 500;
+                color: #000;
+            }
+            small {
+                text-transform: uppercase;
+                font-weight: 500;
+                letter-spacing: 1px;
+                color: #999;
+            }
+            p {
+                margin-top: 12px;
+            }
+        }
+        @media screen and (max-width: 960px) {
+            min-width: 100%;
+            max-width: 100%;
+            padding: 48px 24px;
+            .boilerplate-item {
+                flex: 0 1 auto;
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.github-buttons {
+    display: flex;
+    flex: 0 1 auto;
+    width: 100%;
+    margin: 36px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.github-buttons a {
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    border-radius: 2px;
+    border: 1px solid #000;
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    &:before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        background: url(GitHub-Mark-32px.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    &:hover {
+        background: #000;
+        color: #fff;
+        &:before {
+            background: url(GitHub-Mark-Light-32px.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
+.My-Icon{
+    background-image: url('https://unpkg.com/cryptoicons-cdn/images/AR.png');
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+.NAS-Icon{
+    background-image: url('https://i.imgur.com/gNCeBXr.png');
+    width: 25px;
+    height: 25px;
+    background-size: cover;    
+}
+
+.coin.selected .NAS-Icon{
+    width: 25px;
+    height: 25px;
+}
+.taginput input{
+    width: 120px;
+}
+
+
+.bluebg {
+    color: #FFF;
+    background: #333c58;
+    box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.32);
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.RoundBtn {
+    background: rgba(66, 66, 66, 0.39);
+    padding: 10px;
+    cursor: pointer;
+    transition: .15s all linear;
+    box-shadow: 1px 7px 10px rgba(0, 0, 0, .5);
+}
+
+.RoundBtn:hover {
+    background: rgba(0, 0, 0, 0.63);
+    transform: translateY(-2px);
+    box-shadow: none;
+} 
+
+.crypto-coin-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: .3;
+    top: 0;
+    left: 0;
+    transform: scale(1.5);
+    transition: .15s linear all;
+}
+.custom-coin .crypto-coin-bg {
+    height: 100%;
+}
+
+.custom-coin .My-Icon{
+    width: 25px;
+    height: 25px;
+}
+.crypto-coin svg {
+    z-index: 2;
+    position: relative;
+}
+
+.crypto-coin {
+    position: relative;
+    margin: 10px 15px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+coin.disabled .crypto-coin{
+    cursor: default;
+}
+
+.coin:not(.disabled) .crypto-coin:hover .crypto-coin-bg,.coin.selected .crypto-coin .crypto-coin-bg{
+    transform: scale(2);
+}
+
+
+.coin.disabled .crypto-coin {
+    filter: grayscale(1);
+}
+
+.ContentDivider{
+    margin: 22px auto;
+    position: relative;
+    border-bottom: 1px solid #e8e8ea;
+}
+
+.ContentDivider img{
+    width: 6rem;
+    position: absolute;
+    left: calc(50% - 3rem);
+    top: -.25rem;
+    padding: 0 1.5rem;
+    background: #fff;
+}
+
+
+
+.req-logo .reqimg{
+    background: url('https://i.imgur.com/YUnoIrb.png');
+    height: 25px;
+    width: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+
+    background: url("https://i.imgur.com/gNCeBXr.png");
+    width: 25px;
+    height: 25px;    
+}
+
+.req-button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background: #0c324a;
+    background-image: linear-gradient(45deg,#0c324a,#1b4e6e);
+    color: #FFF;
+    border: 0;
+
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+
+    box-shadow: -4px 4px 10px rgba(12, 50, 74, 0.36);
+    transition: .15s all linear;    
+    
+    background: #292929;
+    background-image: linear-gradient(45deg, #525252, #292929);    
+}
+
+.req-text {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 25px;
+}
+.req-logo,.req-text {
+    padding: 10px;
+    border-bottom: 3px solid transparent;
+}
+.req-logo{
+    border-color: #fa6183;
+    border-right: 1px solid #792135!important;
+}
+
+.req-button:hover .req-text {
+    border-color: #fa6183;
+}
+
+.req-button:active {
+    transform: translateY(-3px);
+    box-shadow: -2px 1px 10px rgba(12, 50, 74, 0.36);
+}
+#metamask-container{
+    filter: hue-rotate(-50deg);
+}
+
+.cover-dropzone {
+    background: #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    cursor: pointer;
+    
+    .material-icons {
+        font-size: 50px;
+        color: #818181;
+    }    
+}
+.greyheader{
+    padding: 20px 35px;
+    font-size: 16px;
+    background: #f7f8fb;
+    border: 1px solid #e7ebf3;
+    .material-icons {
+        color: #96a3b6;
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
+    a {
+        color: #333;
+    }    
+    .cta.thin.newbtn {
+        border: 1px solid #1c2541;
+        color: #454444;
+        border-radius: 4px;
+        font-weight: normal;
+        padding: 5px 20px;
+    }
+
+    .cta.thin.newbtn:hover {
+        background: #454444;
+        color: #FFF;
+    }    
+}
+.greyheader.mini{
+    padding: 10px 25px;
+    color: #7b7b7b;
+}
+.formLang{
+    padding: 0 20px!important;
+    span{
+        color: #FFF!important;
+    }
+}

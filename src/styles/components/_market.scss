@@ -1,0 +1,68 @@
+.market-div{
+	width: 360px;
+	height: 300px;
+	position: relative;
+	padding: 0 10px;
+	margin: 10px;
+	background: #FFF;
+	box-shadow: 2px 5px 10px rgba(1, 1, 1, 0.2);
+
+	.mcover{
+		margin-top: 95px;
+	}
+	.cover{
+		height: 130px;
+	}	
+	.explore-title{
+		margin-bottom: 25px;
+	    color: #FFF;
+	}
+	.explore-descr{
+	    width: auto;
+	}
+	.zindex{
+		z-index: 2;
+	}
+	.col5{
+		margin-right: 20px;
+	}
+	.crypto-coin{
+		margin: 0;
+	}
+}
+.market-demotxt{
+    overflow: auto;
+    line-height: 18px;
+    white-space: pre;
+    font-size: 14px;
+    padding: 5px 30px;
+}
+.market-demo {
+    position: fixed;
+    z-index: 10;
+    background: #FFF;
+    width: 70%;
+    top: 14%;
+    left: 20%;
+    height: 80%;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.16);
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+}
+
+.market-header {
+    padding: 20px 9px;
+    font-size: 15px;
+    color: #e847dc;
+    border-bottom: 1px solid #eaeaea;
+    .material-icons{
+    	cursor: pointer;
+    }
+}
+.market-footer{
+    height: 140px;
+    padding: 20px 40px;
+	.crypto-coin{
+		margin: 0;
+	}    
+}

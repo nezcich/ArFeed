@@ -1,0 +1,366 @@
+
+.subheader{
+    font-size: 25px;
+    text-transform:uppercase;
+    color: #333;
+}
+.sub-subheader{
+    color: #333;
+    font-size: 150%;
+}
+.box:not(.boxkill),.expand .box.boxkill{
+    padding: 10px 20px;
+    background: #FFF;
+    //box-shadow: 7px 4px 10px #dcdcdcf7; 
+    //margin: 10px;
+    border: 1px solid #dedfe0;
+    border-radius: 4px;
+}
+.subheader.top{
+    margin: 0;
+}
+.copycode{
+    margin: 0 4px;
+    background: #f2f2f2;
+    border-radius: 12px;
+    padding: 6px;
+}
+.cta{
+	position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 1.8rem;
+    background: #fff;
+    color: #2a2825;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 4px solid transparent;
+    cursor: pointer;
+    transition: all .2s linear;
+    outline: none;
+    border-radius: 50px;
+    padding: 20px;
+    white-space: nowrap;
+}
+.cta.thin{
+ padding: 10px;
+}
+
+.cta.thin:hover {
+    color: #FFF;
+}
+.cta.thin {
+    background: none;
+    font-size: 12px;
+    border-width: 2px;
+    padding: 4px;
+}
+
+.primary-btn,.secondary-btn,.ternary-btn{
+    //background-color: $colormain;
+    color: #fff;
+    //box-shadow: inset 0 0 0 .2rem $colorshadow,0 .2rem 0 0 #e7e6e4;
+}
+.secondary-btn{
+    //background-color: $colorsecondary;
+    margin: 5px 0px;
+}
+.Radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+.Radio-button.ternary-btn{
+    padding: 5px;
+    
+    text-transform: uppercase;
+    font-weight: bold;
+
+
+    color: #4e4e4e;
+
+    //background: #f8f8f8;
+    border-radius: 0;
+}
+
+.Radio-button.ternary-btn.selected,.Radio-button.ternary-btn:hover{
+    opacity: 1;
+    //background: #ecf6ff;
+    //color: #3b9dff;
+    color: #3bff5b;
+}
+.Radio-group span._11 {
+    text-align: left;
+}
+.Radio-group i.material-icons {
+    margin-right: 10px;
+}
+.Radio-button.ternary-btn.isCheckBox:not(.selected){
+    opacity:.5;
+}
+.thin .Radio-button.ternary-btn{
+    color: #282828;
+    border-color: #282828;
+    background-image: none;
+    background-color: transparent;
+    min-width: 50px;
+    border-width: 1px;
+    font-size: 12px;    
+}
+.thin .Radio-button.ternary-btn:hover,.thin .Radio-button.ternary-btn.selected{
+    background: #282828;
+    color: #FFF;    
+    font-weight: 100;
+}
+.Radio-button.ternary-btn:first-child{
+    //border-radius: 5px 0 0 5px;
+}
+.Radio-button.ternary-btn:last-child{
+    //border-radius: 0 5px 5px 0;
+}
+.Radio-button {
+    flex: 25%;
+}
+.cta.Radio-button{
+    background: transparent;
+}
+.cta.nopointer{
+    pointer-events: none;
+}
+
+.secondary-btn.black{
+    //background-color: #333;
+}
+.secondary-btn.green{
+    //background-color: #31ff5d;
+}
+.secondary-btn.blue{
+    //background-color: #747efd;
+}
+.secondary-btn.red{
+    //background-color: #e81212;
+}
+.blue{
+    color: #15a3cf;
+    border-color: #15a3cf;    
+    box-shadow: rgb(213, 229, 255) -1px 5px 13px 0px;
+}
+.blue:hover{
+    background: #15a3cf;
+    color: #FFF;
+}
+.lgreen{
+    color: #61fac7;
+    border-color: #61fac7;    
+    box-shadow: rgb(213, 229, 255) -1px 5px 13px 0px;
+}
+.lgreen:hover{
+    background: #61fac7;
+    color: #FFF;
+}
+.red{
+    color: #e81212;
+    border-color: #e81212;    
+    box-shadow: #ffc4c4 -1px 5px 13px 0px;
+}
+.red:hover{
+    background: #e81212;
+    color: #FFF;
+}
+
+.black{
+    background-image: linear-gradient(120deg, #7090e9, #49c4d8);
+    box-shadow: -1px 6px 13px 0px rgba(141, 199, 245, .5); 
+}
+.black:hover{
+    //border-color: #abdaff;
+}
+.green {
+    background-image: linear-gradient(120deg, #ff68b5, #fea199);
+    box-shadow: #fd9f9f -1px 6px 13px 0px;
+
+}
+#create-btn {
+    background: #49c4d8;
+    box-shadow: #49c4d8 3px 4px 15px 0px;
+    border-radius: 4px;
+}
+#create-btn:hover{
+    background: #3ea9bb;
+}
+.submitbtn{
+    background: #ff68b5;
+    border-radius: 4px;
+    box-shadow: #ff68b5 3px 4px 15px 0px;
+}
+.submitbtn:hover{
+    background: #ed5fa7;
+}
+.verifybtn{
+    background: #303c60;
+    border-radius: 4px;
+    box-shadow: #303c60 3px 4px 15px 0px;
+}
+.verifybtn:hover{
+    background: #1c2541;
+}
+.x15 .crypto-coin.custom-coin .My-Icon{
+    width: 15px;
+    height: 15px;
+}
+.green:hover {
+    //border-color: #ff9991;
+}
+.cta:hover{
+    //-webkit-transform: translateY(-.2rem);
+   // transform: translateY(-.2rem);    
+   //filter: brightness(1.2);
+}
+.cta:active:not(.thin):not(.ternary-btn){
+    transform: translateY(4px);
+    box-shadow: none!important;
+}
+
+input,textarea{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #e8e8e8;
+    //border-radius: 10px;  
+    outline: 0;
+}
+input:hover,input:focus,
+textarea:hover,textarea:focus{
+    box-shadow: -1px 3px 10px #e8e8e8;
+}
+textarea{
+    //height: 150px;
+    resize: none;
+}
+.full{
+    width: 100%;
+}
+.hit-section{
+    background: #fdfdfd;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 3px 3px 10px #f7f7f7;    
+}
+.mglr20{
+    margin: 0 20px;
+}
+.mglr10{
+    margin: 0 10px;
+}
+.mgd20{
+    margin-bottom: 20px;
+}
+.fwrap{
+    flex-wrap: wrap;
+}
+button:disabled{
+    pointer-events:none;
+    opacity: .5;
+    cursor: default;
+    transform: translateY(0);
+}
+._11{
+    flex: 1 1 auto;
+}
+.jc{
+    justify-content: center;
+}
+.algn{
+    align-items: center;
+}
+.bold{
+    font-weight: bold;
+    margin-right: 10px;    
+    color: #4d5497;
+}
+.flex.withwrap{
+    display: flex;
+    flex-wrap: wrap;    
+}
+.flex.withwrap a,.flex.withwrap svg{
+    height: 40px;
+    width: 40px;
+}
+.custom-coin{
+    
+}
+.customLogo{
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: #FFF;
+    border-radius: 50%;    
+    box-shadow: 1px 5px 7px #dcdcdc;
+}
+.section-iframely div, .section-iframely iframe {
+    //position: relative!important;
+}
+
+.section-iframely div {
+    //padding-bottom: 0px!important;
+    margin: 20px 10px;
+}
+.toggleButtons .material-icons {
+    margin: 10px;
+    color: #828282;
+    cursor: pointer;
+}
+
+.toggleButtons .clicked .material-icons {
+    color: #333;
+}
+.claimbtn{
+    color: #FFF;
+    border-radius: 4px;
+    border-color: transparent;
+    background: #58ff74;
+    box-shadow: #58ff74 3px 4px 15px 0px;
+}
+.claimbtn:hover{
+    background: #4eef69;
+}
+.box.subheader.top{
+    font-weight: bold;
+}
+.topheader{
+    position: fixed;
+    top: 0;
+    left: 240px;
+    background: #1c2541;
+    width: 85%;
+    box-shadow: 1px 6px 10px rgba(17, 21, 35, 0.25);    
+    z-index: 100;
+    #topsearch{
+        height: 34px;
+        width: 40%;
+        margin: 10px;
+        background: #0a0e1a;
+        border-color: #0a0e1a;
+        border-radius: 4px;
+        box-shadow: none!important;
+        color: #fff;    
+    }    
+    .cta.thin.blockchainbtn{
+        padding: 5px 20px;
+        box-shadow: none;
+        background: transparent;
+    }
+    #loginbox{
+        margin-right: 80px;
+    }
+    width: 90%;
+    padding: 7px;    
+}
+.page{
+    margin-top: 54px;
+}

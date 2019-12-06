@@ -1,0 +1,61 @@
+.topbar {
+	display: block;
+	flex: 0 1 auto;
+	align-items: center;
+	padding: 10px 20px;
+	width: 100%;
+    .button {
+        font-weight: 600;
+    }
+    background: #FFF;
+    border-bottom: 1px solid #f2f2f2;
+    text-align: left; 
+    flex: 0;
+    background: rgb(28, 37, 65);
+    transition: .15s all linear;
+    //margin-left: -220px;
+}
+.topbar:hover{
+    //margin-left: 0px;
+}
+
+.topbar i.material-icons {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+
+.topbar {
+    padding: 0;
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    z-index: 10;
+    box-shadow: 1px 6px 10px #111a35;
+    top: 0;
+    left: 0;    
+}
+.page{
+    margin-left: 240px;
+}
+.software-version{
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 12px;    
+}
+.profile-picture{
+    height: 32px;
+    width: 32px;
+    background-size: cover;
+    border-radius: 4px;
+    margin: 0 10px;    
+}
+#loginbox{
+    .material-icons{
+        color: #e6e6e6;
+        cursor: pointer;
+    }
+}
