@@ -68,7 +68,7 @@ export default class Sections extends Component {
 				let stamps = await Promise.all(txs.slice(0, max).map(async o => {
 					let t = await this.store.nebStore.fetchTimestamp(o)
 					var date = new Date(t * 1000);
-					return date.getMonth();
+					return date.getHours();
 				}));
 				//frequency calculate
 				var freq = stamps.reduce((acc, curr) => {
@@ -76,9 +76,9 @@ export default class Sections extends Component {
 					return acc;
 				}, {});
 
-				var dataset = [...Array(11).keys()].map(o => {
-					if (freq[o + 1]) {
-						return freq[o + 1]
+				var dataset = [...Array(24).keys()].map(o => {
+					if (freq[o]) {
+						return freq[o]
 					} else {
 						return 0;
 					}
@@ -96,10 +96,10 @@ export default class Sections extends Component {
 								height={500}
 								options={{ maintainAspectRatio: false }}
 								data={{
-									labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+									labels: [...Array(24).keys()],
 									datasets: [
 										{
-											label: 'Transactions',
+											label: 'Transactions Every Hour (last 30)',
 											backgroundColor: 'rgba(255,99,132,0.2)',
 											borderColor: 'rgba(255,99,132,1)',
 											borderWidth: 1,

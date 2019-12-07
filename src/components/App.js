@@ -55,27 +55,6 @@ export default class App extends Component {
 				/>
 				<Route
 					exact
-					path="/task/:address"
-					render={props => (
-						<LazyRoute {...props} component={import("./Task")} />
-					)}
-				/>
-				<Route
-					exact
-					path="/verification/:type/:address"
-					render={props => (
-						<LazyRoute {...props} component={import("./Task")} />
-					)}
-				/>
-				<Route
-					exact
-					path="/verification/:type/:address/:user_address"
-					render={props => (
-						<LazyRoute {...props} component={import("./Task")} />
-					)}
-				/>
-				<Route
-					exact
 					path="/explore"
 					render={props => (
 						<LazyRoute {...props} component={import("./Explore")} />
@@ -83,42 +62,7 @@ export default class App extends Component {
 				/>
 				<Route
 					exact
-					path="/explore/:type"
-					render={props => (
-						<LazyRoute {...props} component={import("./Explore")} />
-					)}
-				/>
-				<Route
-					exact
-					path="/task/:address/:user_address"
-					render={props => (
-						<LazyRoute {...props} component={import("./Task")} />
-					)}
-				/>
-				<Route
-					exact
-					path="/task/:address/:user_address/:miner_addr"
-					render={props => (
-						<LazyRoute {...props} component={import("./Task")} />
-					)}
-				/>
-				<Route
-					exact
 					path="/tasks/tx/:tx_hash"
-					render={props => (
-						<LazyRoute {...props} component={import("./Task")} />
-					)}
-				/>
-				<Route
-					exact
-					path="/tasks/tx/:tx_hash/:address/:user_address"
-					render={props => (
-						<LazyRoute {...props} component={import("./Task")} />
-					)}
-				/>
-				<Route
-					exact
-					path="/tasks/tx/:tx_hash/:address/:user_address/:miner_addr"
 					render={props => (
 						<LazyRoute {...props} component={import("./Task")} />
 					)}
