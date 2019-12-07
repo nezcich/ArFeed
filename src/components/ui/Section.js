@@ -40,7 +40,7 @@ export default class Section extends Component {
 						<div title="Click to Query" onClick={this.fetchARQL} className="explore-descr explore-arql">{arql}</div>
 
 						{this.state.arql_response !== null ? <div style={{ "maxHeight": "350px", "overflow": "auto" }} className="explore-descr explore-arql explore-arql-response">
-							Number of Data Items: {Array.isArray(this.state.arql_response) ? this.state.arql_response.length : 0}<br />{this.state.arql_response}</div> : (<div style={{ "maxHeight": "350px", "overflow": "auto" }} className="explore-descr explore-arql explore-arql-response">{"Response will show here"}</div>)}
+							Number of Data Items: {Array.isArray(JSON.parse(this.state.arql_response)) ? JSON.parse(this.state.arql_response).length : 0}<br />{this.state.arql_response}</div> : (<div style={{ "maxHeight": "350px", "overflow": "auto" }} className="explore-descr explore-arql explore-arql-response">{"Response will show here"}</div>)}
 					</div>
 
 				</div>

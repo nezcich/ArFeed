@@ -14,6 +14,7 @@ The permafeed hub allows developers to browse feeds, reading the details provide
 - Shows who has tipped
 - Show stats like feed creation date, number data items in arql query, first&last transactions , tips amount, current balance in feed wallet
 - Visualize number of transactions in every hour in a day ( limited to max 30 transaction otherwise it will flood the network requests)
+- Decentralized Comments by 3Box
 - Multilingual
 - Slick UI
 

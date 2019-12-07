@@ -62,7 +62,7 @@ export default class App extends Component {
 				/>
 				<Route
 					exact
-					path="/tasks/tx/:tx_hash"
+					path="/feeds/tx/:tx_hash"
 					render={props => (
 						<LazyRoute {...props} component={import("./Task")} />
 					)}

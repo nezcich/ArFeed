@@ -49,6 +49,8 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "3box": "^1.14.0",
+    "3box-comments-react": "^0.0.1-beta.20",
     "@material-ui/core": "^1.1.0",
     "arweave": "^1.6.0",
     "blob-to-buffer": "^1.2.7",
@@ -57,7 +59,6 @@
     "css-declaration-sorter": "^3.0.1",
     "css-mqpacker": "^6.0.2",
     "dirty-json": "^0.7.1",
-    "disqus-react": "^1.0.5",
     "ipfs-mini": "^1.1.2",
     "lazy-route": "^1.0.7",
     "metamask-logo": "^2.1.4",

@@ -76,7 +76,7 @@ export default class Explore extends Component {
 		const tbody = [];
 		tasks.map((o, i) => {
 			tbody.push(
-				<Link key={i} to={`tasks/tx/${o.id}`}>
+				<Link key={i} to={`feeds/tx/${o.id}`}>
 					<TaskList {...this.props} {...o} />
 				</Link>
 			)

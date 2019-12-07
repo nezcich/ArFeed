@@ -7,8 +7,8 @@ import Section from './Section';
 import MyIcon from './MyIcon';
 
 import { Card, CardContent, Tabs, Tab, AppBar } from '@material-ui/core';
-import Disqus from 'disqus-react';
 import Language from "../Language";
+import TBoxComments from "./TBoxComments";
 import moment from "moment";
 import LinearProgress from '@material-ui/core/LinearProgress';
 
@@ -88,8 +88,8 @@ export default class Sections extends Component {
 				this.setState({
 					stats: [
 						{ title: "Total Transactions", content: txs.length },
-						{ title: "Last Transaction", content: <a href={`${etherscan}${txs[0]}`}>{smartTrim(txs[0], 15)} - {moment(await this.store.nebStore.fetchTimestamp(txs[0]) * 1000).fromNow()}</a> },
-						{ title: "First Transaction", content: <a href={`${etherscan}${txs[txs.length - 1]}`}>{smartTrim(txs[txs.length - 1], 15)} - {moment(await this.store.nebStore.fetchTimestamp(txs[txs.length - 1]) * 1000).fromNow()}</a> },
+						{ title: "Last Transaction", content: <a href={`${etherscan_root}tx/${txs[0]}`}>{smartTrim(txs[0], 15)} - {moment(await this.store.nebStore.fetchTimestamp(txs[0]) * 1000).fromNow()}</a> },
+						{ title: "First Transaction", content: <a href={`${etherscan_root}tx/${txs[txs.length - 1]}`}>{smartTrim(txs[txs.length - 1], 15)} - {moment(await this.store.nebStore.fetchTimestamp(txs[txs.length - 1]) * 1000).fromNow()}</a> },
 						{
 							title: "Feed Transactions", content: <Bar
 								width={100}
@@ -124,11 +124,6 @@ export default class Sections extends Component {
 		const len = sections.length;
 		const { index, showAll } = this.state;
 		const nxtP = (len > 1 && !showAll) ? this.nextprevBtn() : "";
-
-		const disqusConfig = {
-			url: "https://arweave.net/",
-			identifier: `arweave-${id}`,
-		};
 
 		return (
 			<div>
@@ -198,7 +193,7 @@ export default class Sections extends Component {
 
 				{this.state.value === 3 &&
 					<TabContainer>
-						<Disqus.DiscussionEmbed config={disqusConfig} />
+						<TBoxComments id={id} />
 					</TabContainer>}
 			</div>
 		);

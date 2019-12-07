@@ -181,7 +181,7 @@ export default class Home extends Component {
 		}
 		this.store.disableButton(true);
 		this.props.store.nebStore.createFeed({ title, description, sections, cover, wallet, tags }, appState.jwk).then(contract_addr => {
-			this.props.history.push(`/tasks/tx/${contract_addr}`);
+			this.props.history.push(`/feeds/tx/${contract_addr}`);
 		});
 	}
 
