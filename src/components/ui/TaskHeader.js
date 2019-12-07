@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
 
-import LinearProgress from '@material-ui/core/LinearProgress';
 import { etherscan, coinLogoFromTicker, stringToColour, smartTrim } from '../../utils/constants.js';
-import { tokensByAddr } from '../../utils/tokenList.js';
-import Sections from './Sections';
 import MyIcon from './MyIcon';
-import { getFromIPFS } from '../../services/ipfsService.js';
 import moment from 'moment';
 import Language from "../Language";
 

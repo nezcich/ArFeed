@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
 import BasicHIT from './BasicHIT.js';
-import { storeOnIPFS } from '../services/ipfsService.js';
-import { tokensByAddr } from '../utils/tokenList';
 import TextareaAutosize from 'react-autosize-textarea';
 import BHitSection from './ui/BHitSection.js';
 import UnlockMeta from './ui/UnlockMeta.js';
 import { StickyContainer, Sticky } from 'react-sticky';
 import Language from "./Language";
 import moment from "moment";
-import RadioButton from './ui/RadioButton';
 
 const RoundBtn = (props) => {
 	const cl = (props.disabled) ? "disabled" : "";

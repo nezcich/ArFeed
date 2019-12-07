@@ -2,14 +2,9 @@ import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
 
 import BHitDisplay from './ui/BHitDisplay.js';
-import RadioButton from './ui/RadioButton';
-//import { tokens } from '../utils/tokenList.js';
 import Dropzone from 'react-dropzone'
 
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
-import TextareaAutosize from 'react-autosize-textarea';
-import { coinLogoFromTicker, Divider } from '../utils/constants.js';
+import { Divider } from '../utils/constants.js';
 import toBuffer from 'blob-to-buffer';
 import Language from "./Language";
 

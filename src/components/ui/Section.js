@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
+const dJSON = require('dirty-json');
 
 @inject("store")
 @observer
@@ -12,19 +13,14 @@ export default class Section extends Component {
 		this.state = {
 			arql_response: null,
 		}
-
 	}
 
 	fetchARQL = async () => {
+		this.setState({ arql_response: null });
 		const { arql } = this.props;
-
-		console.log(arql);
-		console.log(JSON.stringify(arql, undefined, 4));
-		console.log(arql instanceof String);
-		console.log(arql instanceof Object);
-		const res = await this.store.nebStore.fetchARQL(arql);
-		this.setState({ arql_response: res });
-
+		const r = dJSON.parse(arql)
+		const res = await this.store.nebStore.fetchARQL(r);
+		this.setState({ arql_response: JSON.stringify(res) });
 	}
 	render() {
 
@@ -40,9 +36,12 @@ export default class Section extends Component {
 						<div className="_11 explore-title">{title}</div>
 					</div>
 					<div className="explore-descr">{description}</div>
-					<div onClick={this.fetchARQL} className="explore-descr explore-arql">{arql}</div>
+					<div style={{ display: "flex" }}>
+						<div title="Click to Query" onClick={this.fetchARQL} className="explore-descr explore-arql">{arql}</div>
 
-					{this.state.arql_response !== null ? <div className="explore-descr explore-arql explore-arql-response">{arql_response}</div> : (null)}
+						{this.state.arql_response !== null ? <div style={{ "maxHeight": "350px", "overflow": "auto" }} className="explore-descr explore-arql explore-arql-response">
+							Number of Data Items: {Array.isArray(this.state.arql_response) ? this.state.arql_response.length : 0}<br />{this.state.arql_response}</div> : (<div style={{ "maxHeight": "350px", "overflow": "auto" }} className="explore-descr explore-arql explore-arql-response">{"Response will show here"}</div>)}
+					</div>
 
 				</div>
 			</div>

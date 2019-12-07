@@ -84,7 +84,7 @@ export default class Explore extends Component {
 
 		return (
 			<div className="page explore">
-				<div className="greyheader flex algn"><div className="_11">Explore</div><Link to="#/"><button className="secondary-btn cta thin newbtn"><Language resource="NEW" /></button></Link></div>
+				<div className="greyheader flex algn"><div className="_11">Explore</div><Link to="/"><button className="secondary-btn cta thin newbtn"><Language resource="NEW" /></button></Link></div>
 				<div className="flex col box nopad tlist">
 					{thead}{tbody}
 				</div>

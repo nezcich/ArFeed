@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
 import { Link } from "react-router-dom";
-import { storeOnIPFS, getFromIPFS } from '../../services/ipfsService.js';
-import { moredata, etherscan } from '../../utils/constants.js';
+import { etherscan, smartTrim } from '../../utils/constants.js';
 import Section from './Section';
-import WorkerHeader from './WorkerHeader';
-import ListPeople from './ListPeople';
-import ReactMarkdown from 'react-markdown';
 
 import MyIcon from './MyIcon';
 
-import { Typography, Tabs, Tab, AppBar } from '@material-ui/core';
+import { Card, CardContent, Tabs, Tab, AppBar } from '@material-ui/core';
 import Disqus from 'disqus-react';
 import Language from "../Language";
+import moment from "moment";
+import LinearProgress from '@material-ui/core/LinearProgress';
 
+import { Bar } from 'react-chartjs-2';
 
 function TabContainer({ children, dir }) {
 	return (
@@ -35,6 +34,7 @@ export default class Sections extends Component {
 			showAll: false,
 			disabled: false,
 			value: 0,
+			stats: null,
 		}
 	}
 	nextprevBtn = () => {
@@ -56,7 +56,69 @@ export default class Sections extends Component {
 	handleChangeIndex = index => {
 		this.setState({ value: index });
 	};
+	componentDidUpdate() {
+		this.fetchStats();
+	}
+	fetchStats = async () => {
+		if (this.state.value == 1 && this.state.stats == null) {
+			const txs = await this.store.nebStore.fetchAllTx(this.props.wallet);
 
+			if (txs.length > 0) {
+				let max = 30;
+				let stamps = await Promise.all(txs.slice(0, max).map(async o => {
+					let t = await this.store.nebStore.fetchTimestamp(o)
+					var date = new Date(t * 1000);
+					return date.getMonth();
+				}));
+				//frequency calculate
+				var freq = stamps.reduce((acc, curr) => {
+					acc[curr] ? acc[curr]++ : acc[curr] = 1;
+					return acc;
+				}, {});
+
+				var dataset = [...Array(11).keys()].map(o => {
+					if (freq[o + 1]) {
+						return freq[o + 1]
+					} else {
+						return 0;
+					}
+				});
+
+
+				this.setState({
+					stats: [
+						{ title: "Total Transactions", content: txs.length },
+						{ title: "Last Transaction", content: <a href={`${etherscan}${txs[0]}`}>{smartTrim(txs[0], 15)} - {moment(await this.store.nebStore.fetchTimestamp(txs[0]) * 1000).fromNow()}</a> },
+						{ title: "First Transaction", content: <a href={`${etherscan}${txs[txs.length - 1]}`}>{smartTrim(txs[txs.length - 1], 15)} - {moment(await this.store.nebStore.fetchTimestamp(txs[txs.length - 1]) * 1000).fromNow()}</a> },
+						{
+							title: "Feed Transactions", content: <Bar
+								width={100}
+								height={500}
+								options={{ maintainAspectRatio: false }}
+								data={{
+									labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+									datasets: [
+										{
+											label: 'Transactions',
+											backgroundColor: 'rgba(255,99,132,0.2)',
+											borderColor: 'rgba(255,99,132,1)',
+											borderWidth: 1,
+											hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+											hoverBorderColor: 'rgba(255,99,132,1)',
+											data: dataset
+										}
+									]
+								}}
+							/>,
+							noblock: true,
+						},
+					]
+				})
+			} else {
+				this.setState({ stats: [{ title: "Total Transactions", content: txs.length },] });
+			}
+		}
+	}
 	render() {
 		const { sections, tippers, id } = this.props;
 		const len = sections.length;
@@ -64,8 +126,8 @@ export default class Sections extends Component {
 		const nxtP = (len > 1 && !showAll) ? this.nextprevBtn() : "";
 
 		const disqusConfig = {
-			url: window.location.href,
-			identifier: `ra-${id}`,
+			url: "https://arweave.net/",
+			identifier: `arweave-${id}`,
 		};
 
 		return (
@@ -107,13 +169,14 @@ export default class Sections extends Component {
 						</div>
 					</TabContainer>
 				}
-				{/*
 				{this.state.value === 1 &&
 					<TabContainer>
-						{(isOwner) ? <button className="secondary-btn cta thin blockchainbtn" onClick={this.export} ><Language resource="SEC.EXPORT" /></button> : (<Link to="#/marketplace"><button className="secondary-btn cta thin blockchainbtn"><Language resource="SEC.GMARKET" /></button></Link>)}
+						{this.state.stats == null ?
+							<LinearProgress color="secondary" /> : this.state.stats.map(o => {
+								return (<ACard content={o.content} title={o.title} noblock={o.noblock} />)
+							})}
 					</TabContainer>
 				}
-			*/}
 				{this.state.value === 2 &&
 					<TabContainer>
 						<div className="flex mpad col">
@@ -124,9 +187,9 @@ export default class Sections extends Component {
 							{
 								tippers.map(o => {
 									return (
-										<Link to={`${etherscan}${o}`}>
+										<a href={`${etherscan}${o}`} style={{ displat: "inline-block" }}>
 											<MyIcon title={o} id={o} scale={6} size={6} />
-										</Link>
+										</a>
 									)
 								})
 							}
@@ -140,4 +203,15 @@ export default class Sections extends Component {
 			</div>
 		);
 	}
+}
+const ACard = (props) => {
+	var display = props.noblock ? "block" : "inline-block";
+	return (
+		<Card style={{ display: display, margin: "20px" }}>
+			<CardContent>
+				<h3 style={{ fontWeight: "bold", fontSize: "18px" }}>{props.title}</h3>
+				<div style={{ padding: "10px 0", color: "#575757" }}>{props.content}</div>
+			</CardContent>
+		</Card>
+	);
 }

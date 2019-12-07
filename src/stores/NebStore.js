@@ -1,8 +1,14 @@
 import { observable, action, toJS } from "mobx";
 import { defBytes, defAddr } from '../utils/constants';
 
+
+
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
+
 import Arweave from 'arweave/web';
-const APP_NAME = "ArFeedN2";
+const APP_NAME = "ArFeed";
 export default class NebStore {
     @observable arweave;
     @observable node_url;
@@ -130,7 +136,11 @@ export default class NebStore {
     fetchFeedDetails = async (tx) => {
         var f = JSON.parse(tx.get('data', { decode: true, string: true }));
         let owner = await this.arweave.wallets.ownerToAddress(tx.get("owner"));
-        let balance = this.arweave.ar.winstonToAr(await this.arweave.wallets.getBalance(f.wallet));
+        let balance = 0;
+        if (f.wallet) {
+            balance = this.arweave.ar.winstonToAr(await this.arweave.wallets.getBalance(f.wallet));
+            balance = parseFloat(parseFloat(balance).toFixed(3));
+        }
         let startedOn = 0;
         try {
             startedOn = await this.fetchTimestamp(tx.id);
@@ -143,8 +153,8 @@ export default class NebStore {
             owner,
             balance,
             startedOn,
-            tips: this.arweave.ar.winstonToAr(tipAmt),
-            tippers: tips.map(o => o.owner)
+            tips: parseFloat(parseFloat(this.arweave.ar.winstonToAr(tipAmt)).toFixed(3)),
+            tippers: tips.map(o => o.owner).filter(onlyUnique)
         };
     }
     fetchARQL = async (arql) => {
@@ -161,5 +171,9 @@ export default class NebStore {
         return await Promise.all(transactions.map(async transaction => {
             return JSON.parse(transaction.get("data", { decode: true, string: true }));
         }));
+    }
+    fetchAllTx = async (address) => {
+        const response = await fetch(`https://arweave.net/wallet/${address}/txs/`);
+        return await response.json();
     }
 }

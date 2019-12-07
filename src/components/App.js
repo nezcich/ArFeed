@@ -123,13 +123,6 @@ export default class App extends Component {
 						<LazyRoute {...props} component={import("./Task")} />
 					)}
 				/>
-				<Route
-					exact
-					path="/marketplace"
-					render={props => (
-						<LazyRoute {...props} component={import("./Marketplace")} />
-					)}
-				/>
 			</div>
 		);
 	}

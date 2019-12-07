@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
 
-import RadioButton from './RadioButton';
-import TextareaAutosize from 'react-autosize-textarea';
-import { coinLogoFromTicker, ValidURL, iframely_key } from '../../utils/constants.js';
-import { tokensByAddr } from '../../utils/tokenList.js';
-import fetch from 'node-fetch';
-import Language from "../Language";
-
-
 @inject("store")
 @observer
 export default class BHitDisplay extends Component {
